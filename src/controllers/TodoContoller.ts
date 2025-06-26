@@ -5,8 +5,16 @@ const service = new TodoService();
 
 export class TodoController {
   async getTodos(req: Request, res: Response) {
-    const todos = await service.getAll();
-    res.status(200).json(todos);
+    const page = parseInt(req.query.page as string) || 1;
+    const limit = parseInt(req.query.limit as string) || 10;
+
+    const { data, total } = await service.getAll(page, limit);
+    res.status(200).json({
+      currentPage: page,
+      totalPages: Math.ceil(total / limit),
+      totalItems: total,
+      data,
+    });
   }
 
   async getTodo(req: Request, res: Response) {
