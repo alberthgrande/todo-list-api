@@ -17,6 +17,36 @@
 - npm install bcryptjs jsonwebtoken
 - npm install --save-dev @types/bcryptjs @types/jsonwebtoken
 
+# 📦 Step 1: Install Dev Dependencies - Implement unit tests for the API
+
+```
+- ✅ Tools:
+- Jest: JavaScript testing framework
+- Supertest: To test HTTP requests
+- ts-jest: TypeScript support for Jest
+- mongodb-memory-server: In-memory MongoDB for testing (no real DB required)
+```
+
+- npm install --save-dev jest ts-jest supertest @types/jest @types/supertest mongodb-memory-server
+
+## ⚙️ Step 2: Configure Jest
+
+```
+export default {
+  preset: 'ts-jest',
+  testEnvironment: 'node',
+  testMatch: ['**/__tests__/**/*.test.ts'],
+};
+```
+
+## package.json
+
+```
+"scripts": {
+  "test": "jest"
+}
+```
+
 # 🚀 Run the API
 
 - npx ts-node-dev src/server.ts
