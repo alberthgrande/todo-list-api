@@ -52,3 +52,7 @@ export default {
 # 🚀 Run the API
 
 - npx ts-node-dev src/server.ts
+
+[Todo List API](https://roadmap.sh/projects/todo-list-api)
+
+[Github - Todo List API](https://github.com/alberthgrande/todo-list-api)
